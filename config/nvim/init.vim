@@ -655,6 +655,33 @@ call plug#begin('~/.config/nvim/plugged')
     " }}}
 
     Plug 'ekalinin/Dockerfile.vim'
+
+    " Vimwiki {{{
+	Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+	Plug 'mattn/calendar-vim'
+	set nocompatible
+	filetype plugin on
+	let g:vimwiki_autowriteall = 1
+	au BufNewFile,BufRead *.wiki set ft=markdown
+	autocmd BufNewFile,BufReadPost *.wiki set ft=markdown
+	let g:vimwiki_list = [{'path': '~/Google\ Drive/vimwiki/',
+                       \ 'syntax': 'markdown', 'ext': '.md'}]
+	function! ToggleCalendar()
+  		execute ":Calendar"
+  		if exists("g:calendar_open")
+    		if g:calendar_open == 1
+      			execute "q"
+      			unlet g:calendar_open
+    		else
+      			g:calendar_open = 1
+    		end
+  		else
+    		let g:calendar_open = 1
+  		end
+	endfunction
+	autocmd FileType markdown map <Leader>c :call ToggleCalendar()
+	"}}}
+    
 " }}}
 
 call plug#end()
