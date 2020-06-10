@@ -472,7 +472,7 @@ call plug#begin('~/.config/nvim/plugged')
         \  'down':    '40%'})
 
         command! -bang -nargs=* Find call fzf#vim#grep(
-            \ 'rg --column --line-number --no-heading --follow --color=always -- '.shellescape(<q-args>).' || true', 1,
+            \ 'rg --column --line-number --no-heading --ignore-cas --follow --color=always -- '.shellescape(<q-args>).' || true', 1,
             \ <bang>0 ? fzf#vim#with_preview('up:60%') : fzf#vim#with_preview('right:50%:hidden', '?'), <bang>0)
         command! -bang -nargs=? -complete=dir Files
             \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', '?'), <bang>0)
@@ -693,6 +693,8 @@ call plug#begin('~/.config/nvim/plugged')
 	    let g:go_highlight_functions = 1
 	    let g:go_highlight_operators = 1
 	    let g:go_highlight_build_constraints = 1
+        let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+        let g:go_metalinter_autosave = 1
 
 	" }}}
 
