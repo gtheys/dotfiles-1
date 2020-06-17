@@ -9,6 +9,8 @@ config/nvim/plugged
 config/coc
 config/configstore
 config/nvim/autoload/plug.vim
+config/coc
+config/configstore
 vim/vim.symlink/spell/
 vim/vim.symlink/plugged/
 
