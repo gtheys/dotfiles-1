@@ -479,7 +479,17 @@ call plug#begin('~/.config/nvim/plugged')
         command! -bang -nargs=? -complete=dir GitFiles
             \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview('right:50%', '?'), <bang>0)
     " }}}
+    
+    " national-fzf-vim  {{{
+    " Cool with vimwiki"
+        Plug 'https://github.com/alok/notational-fzf-vim'
+        let g:nv_search_paths = ['~/Google Drive/vimwiki']
+        nnoremap <silent> <c-s> :NV<CR>
+    " }}}
 
+
+    " }}}
+    "
     " vim-fugitive {{{
         Plug 'tpope/vim-fugitive'
         nmap <silent> <leader>gs :Gstatus<cr>
