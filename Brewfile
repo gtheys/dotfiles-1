@@ -50,6 +50,7 @@ brew "z"
 brew "zsh"
 brew "htop"
 brew "awscli"
+brew "navi"
 
 # Applications
 cask "kitty"
