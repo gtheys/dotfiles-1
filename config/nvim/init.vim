@@ -279,6 +279,10 @@ call plug#begin('~/.config/nvim/plugged')
     nmap <leader>4 <Plug>HiInterestingWord4
     nmap <leader>5 <Plug>HiInterestingWord5
     nmap <leader>6 <Plug>HiInterestingWord6
+
+    " Inserting date in my vimwiki
+    :nnoremap <F5> "=strftime("%F")<CR>P
+    :inoremap <F5> <C-R>=strftime("%F")<CR>
 " }}}
 
 " AutoGroups {{{
